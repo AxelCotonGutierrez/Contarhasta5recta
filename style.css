@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
 
+
 * {
   margin: 0;
   padding: 0;
@@ -7,22 +8,22 @@
 }
 
 body {
-  max-height: 80%;
   text-align: center;
   color: #0c4fe1;
+  height: 100%; 
 }
 
 h1 {
-  color: rgb(10, 10, 10);
+  color: #EABE3F;
   padding: 50px;
   font-size: 40px;
 }
 
 .container {
-  background-color: #ddff62;
+  background-color: none;
   max-width: 80%;
   margin: auto;
-  border: 3px solid #000;
+  border: 3px solid #EABE3F;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -34,10 +35,10 @@ h1 {
 }
 
 .container2 {
-  background-color: #f0f3e9;
+  background-color: none;
   max-width: 80%;
   margin: auto;
-  border: 3px solid #000;
+  border: 3px solid #EABE3F;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -49,9 +50,21 @@ h1 {
 }
 
 .textosuperior {
-  font-size: 30px;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
   justify-content: center;
   align-items: center;
+  color:black;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+.pregunta {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  justify-content: center;
+  align-items: center;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
 }
 
 .msj {
@@ -128,10 +141,10 @@ h1 {
 #start-button,
 #play-again-button {
   background-color: #4285f4;
+  border: 2px solid #000;
   color: #fff;
   padding: 10px 20px;
   font-size: 16px;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
@@ -140,4 +153,37 @@ h1 {
 #start-button:hover,
 #play-again-button:hover {
   background-color: #3367d6;
+}
+
+@media (max-width: 768px) {
+  .container, .container2 {
+    max-width: 80%; /* Ancho completo en dispositivos móviles */
+    flex-wrap: wrap; /* Permitir envolver las imágenes en múltiples líneas */
+  }
+
+  
+.pregunta {
+    font-size: 30px;
+}
+.number-line {
+  width: 225px; 
+  margin: 15px auto; /* ajustar el margen proporcionalmente */
+}
+
+.number {
+  width: 30px; 
+  height: 30px; 
+  font-size: 15px; 
+  margin-top: 7.5px; 
+}
+
+.number:before {
+  top: -10.5px; 
+  height: 15px; 
+}
+
+.bar {
+  height: 1.5px; 
+}
+
 }
