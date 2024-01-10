@@ -69,7 +69,7 @@ h1 {
 
 .pregunta2 {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   justify-content: center;
   align-items: center;
   padding-right: 0.5em;
@@ -164,3 +164,35 @@ h1 {
   background-color: #3367d6;
 }
 
+@media (max-width: 768px) {
+  .container, .container2 {
+    max-width: 80%; /* Ancho completo en dispositivos móviles */
+    flex-wrap: wrap; /* Permitir envolver las imágenes en múltiples líneas */
+  }
+
+  
+.pregunta {
+    font-size: 30px;
+}
+.number-line {
+  width: 225px; 
+  margin: 15px auto; /* ajustar el margen proporcionalmente */
+}
+
+.number {
+  width: 30px; 
+  height: 30px; 
+  font-size: 15px; 
+  margin-top: 7.5px; 
+}
+
+.number:before {
+  top: -10.5px; 
+  height: 15px; 
+}
+
+.bar {
+  height: 1.5px; 
+}
+
+}
