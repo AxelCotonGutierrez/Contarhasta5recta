@@ -107,13 +107,3 @@ document.addEventListener('DOMContentLoaded', function() {
   resetGame();
   startButton.style.display = 'block';
 });
-// Navegaciòn"  
- 
-document.addEventListener('DOMContentLoaded', function() {
-  var menuToggle = document.querySelector('.menu-toggle');
-  var menu = document.querySelector('.menu');
-      
-  menuToggle.addEventListener('click', function() {
-  menu.classList.toggle('active');
-  });
-});
