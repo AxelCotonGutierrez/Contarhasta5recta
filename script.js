@@ -13,7 +13,7 @@ const megaphoneIcon = document.querySelector('#megaphone-icon');
 
 // Función para reproducir audio si el sonido está activado
 function playAudio(audioElement) {
-  if (soundControl.checked) {
+  if (soundControl && soundControl.checked) {
     audioElement.play();
   }
 }
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const questionElement = document.getElementById('question');
   const resultElement = document.getElementById('result');
   const playAgainButton = document.getElementById('play-again-button');
-  const scoreElement = document.getElementById('score'); // Elemento para mostrar el puntaje
+  const scoreElement = document.getElementById('score');
 
   let randomNumber;
   let previousRandomNumber;
@@ -66,18 +66,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (selectedNumber === randomNumber) {
       this.classList.add('selected');
-      resultElement.innerHTML = `
-        <div class="message-container">
-          <span class="msj correcto">¡Correcto!</span>
-        </div>`;
+      resultElement.innerHTML = '<div class="message-container"><span class="msj correcto">¡Correcto!</span></div>';
       playAudio(correctoAudio);
       score++;
     } else {
       this.classList.add('selected');
-      resultElement.innerHTML = `
-        <div class="message-container">
-          <span class="msj incorrecto">Incorrecto</span>
-        </div>`;
+      resultElement.innerHTML = '<div class="message-container"><span class="msj incorrecto">Incorrecto</span></div>';
       playAudio(incorrectoAudio);
     }
 
@@ -92,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         playAudio(intentarAudio);
       }
 
-      // Incrementar el contador en Firebase
+      // Incrementar el contador en Firebase usando el script externo
       incrementarContadorFirebase("Infantil/Matemáticas/Contar/5", "5recta");
 
       isGameRunning = false;
@@ -136,10 +130,10 @@ document.addEventListener('DOMContentLoaded', function() {
   startButton.addEventListener('click', handleStart);
   playAgainButton.addEventListener('click', handlePlayAgain);
 
-  // Mostrar el contador al cargar la página
-  mostrarContador("Infantil/Matemáticas/Contar/5", "5recta");
-
   // Mostrar el botón "Comenzar" al cargar la página
   resetGame();
   startButton.style.display = 'block';
+
+  // Mostrar el contador al cargar la página usando el script externo
+  mostrarContador("Infantil/Matemáticas/Contar/5", "5recta");
 });
