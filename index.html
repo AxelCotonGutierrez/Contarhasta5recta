@@ -11,7 +11,7 @@
   <script src="https://axelcotongutierrez.github.io/learningmathematicas/assets/js/footer.js"></script>
   <!-- Incluir las bibliotecas de Firebase -->
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>	
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
   <script src="https://axelcotongutierrez.github.io/learningmathematicas/assets/js/contador.js"></script>
 </head>
 <body>
@@ -26,28 +26,43 @@
     y es perteneciente al curso <a title="Infantil" href="https://axelcotongutierrez.github.io/learningmathematicas/tags/?tag=infantil" target="_blank"><img class="center-block img-responsive" style="display: inline-block;" width="30" alt="Infantil" src="/learningmathematicas/assets/images/pages/figuras/infantil.png"></a>
   </p>
   <br>
-
+  
   <div class="container2">
     <span class="pregunta">¿Eres capaz de contar hasta cinco usando la recta numérica?</span>
     <button id="play-again-button" style="display: none;">Volver a jugar</button>
   </div>
+  
   <div class="container">
     <div class="number-line">
-      <div class="number-container"><div class="number">1</div><div class="bar"></div></div>
-      <div class="number-container"><div class="number">2</div><div class="bar"></div></div>
-      <div class="number-container"><div class="number">3</div><div class="bar"></div></div>
-      <div class="number-container"><div class="number">4</div><div class="bar"></div></div>
-      <div class="number-container"><div class="number">5</div></div>
+      <div class="number-container">
+        <div class="number">1</div>
+        <div class="bar"></div>
+      </div>
+      <div class="number-container">
+        <div class="number">2</div>
+        <div class="bar"></div>
+      </div>
+      <div class="number-container">
+        <div class="number">3</div>
+        <div class="bar"></div>
+      </div>
+      <div class="number-container">
+        <div class="number">4</div>
+        <div class="bar"></div>
+      </div>
+      <div class="number-container">
+        <div class="number">5</div>
+      </div>
     </div>
     <p class="pregunta2" id="question"></p>
     <button id="start-button">Comenzar</button>
     <div id="result"></div>
     <span class="msj" id="score"></span>
+    <p id="contador">Han jugado 0 veces.</p> <!-- Añadido el contador aquí -->
   </div>
-
-  <br>
-  <br>
+  
   <script src="script.js"></script>
+  <br>
   <div id="footer-placeholder"></div>
 </body>
 </html>
