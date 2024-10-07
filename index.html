@@ -2,69 +2,52 @@
 <html>
 <head>
   <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>JUEGO DE LA RECTA NUMÉRICA</title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="nav.css">
-	<link rel="icon" href="icon.png" type="image/png">
-	<script src="https://axelcotongutierrez.github.io/learningmathematicas/assets/js/header.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JUEGO DE LA RECTA NUMÉRICA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="nav.css">
+  <link rel="icon" href="icon.png" type="image/png">
+  <script src="https://axelcotongutierrez.github.io/learningmathematicas/assets/js/header.js"></script>
+  <script src="https://axelcotongutierrez.github.io/learningmathematicas/assets/js/footer.js"></script>
+  <!-- Incluir las bibliotecas de Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>	
+  <script src="https://axelcotongutierrez.github.io/learningmathematicas/assets/js/contador.js"></script>
 </head>
 <body>
-	<header>
-		<div id="header-placeholder"></div>
-		  <h1 style="text-align: center;">JUEGO DE LA RECTA NUMÉRICA HASTA EL 5</h1>
-		</header>
-		<br>
-		<p class="textosuperior" style="text-align: center;">Este contenido se vincula con el 
-			<b><a href="https://axelcotongutierrez.github.io/learningmathematicas/projects/Niveles/#level-2-detail" target="_blank">Nivel 2</a></b>
-			 de la materia <a title="Matemáticas" href="https://axelcotongutierrez.github.io/learningmathematicas/tags/?tag=matemáticas" target="_blank"><img class="center-block img-responsive" width="30" alt="Matemáticas" src="/learningmathematicas/assets/images/pages/figuras/Matematicas.png"></a>
-			 y es perteneciente al curso <a title="Infantil" href="https://axelcotongutierrez.github.io/learningmathematicas/tags/?tag=infantil" target="_blank"><img class="center-block img-responsive" style="display: inline-block;" width="30" alt="Infantil" src="/learningmathematicas/assets/images/pages/figuras/infantil.png"></a>
-			</p>
-		  <br>
-	  
-	 
-	  
-  
-	<div class="container2">
-		<span class="pregunta">¿Eres capaz de contar hasta cinco usando la recta numérica?</span>
-		<button id="play-again-button" style="display: none;">Volver a jugar</button>
-	</div>
-	<div class="container">
-		<div class="number-line">
-			<div class="number-container">
-				<div class="number">1</div>
-				<div class="bar"></div>
-			</div>
-			<div class="number-container">
-				<div class="number">2</div>
-				<div class="bar"></div>
-			</div>
-			<div class="number-container">
-				<div class="number">3</div>
-				<div class="bar"></div>
-			</div>
-			<div class="number-container">
-				<div class="number">4</div>
-				<div class="bar"></div>
-			</div>
-			<div class="number-container">
-				<div class="number">5</div>
-			</div>
-		</div>
-		<p class="pregunta2" id="question"></p>
-		<button id="start-button">Comenzar</button>
-		<div id="result"></div>
-		<span class="msj" id="score"></span>
-	</div>
-<br>
-<br>
-	<script src="script.js"></script>
-	<br>
-	<footer class="footer">
-		<ul class="footer-links">
-			<li><a href="http://github.com/AxelCotonGutierrez"> <img src="githubinverseicon.jpg"></a></li>
-			<li><a href="https://www.youtube.com/@learningmathematicas"> <img src="youtubeinverseicon.jpg"></i></a></li>
-		</ul>
-	</footer>
+  <header>
+    <div id="header-placeholder"></div>
+    <h1 style="text-align: center;">JUEGO DE LA RECTA NUMÉRICA HASTA EL 5</h1>
+  </header>
+  <br>
+  <p class="textosuperior" style="text-align: center;">Este contenido se vincula con el 
+    <b><a href="https://axelcotongutierrez.github.io/learningmathematicas/projects/Niveles/#level-2-detail" target="_blank">Nivel 2</a></b>
+    de la materia <a title="Matemáticas" href="https://axelcotongutierrez.github.io/learningmathematicas/tags/?tag=matemáticas" target="_blank"><img class="center-block img-responsive" width="30" alt="Matemáticas" src="/learningmathematicas/assets/images/pages/figuras/Matematicas.png"></a>
+    y es perteneciente al curso <a title="Infantil" href="https://axelcotongutierrez.github.io/learningmathematicas/tags/?tag=infantil" target="_blank"><img class="center-block img-responsive" style="display: inline-block;" width="30" alt="Infantil" src="/learningmathematicas/assets/images/pages/figuras/infantil.png"></a>
+  </p>
+  <br>
+
+  <div class="container2">
+    <span class="pregunta">¿Eres capaz de contar hasta cinco usando la recta numérica?</span>
+    <button id="play-again-button" style="display: none;">Volver a jugar</button>
+  </div>
+  <div class="container">
+    <div class="number-line">
+      <div class="number-container"><div class="number">1</div><div class="bar"></div></div>
+      <div class="number-container"><div class="number">2</div><div class="bar"></div></div>
+      <div class="number-container"><div class="number">3</div><div class="bar"></div></div>
+      <div class="number-container"><div class="number">4</div><div class="bar"></div></div>
+      <div class="number-container"><div class="number">5</div></div>
+    </div>
+    <p class="pregunta2" id="question"></p>
+    <button id="start-button">Comenzar</button>
+    <div id="result"></div>
+    <span class="msj" id="score"></span>
+  </div>
+
+  <br>
+  <br>
+  <script src="script.js"></script>
+  <div id="footer-placeholder"></div>
 </body>
 </html>

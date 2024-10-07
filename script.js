@@ -1,11 +1,33 @@
 // Axel Cotón Gutiérrez Copyright 2023
 
+// Cargar archivos de audio desde la carpeta adecuada
+const preguntaAudio = new Audio('https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta5recta/master/audio/Pregunta.mp3');
+const correctoAudio = new Audio('https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta5recta/master/audio/Correcto.mp3');
+const incorrectoAudio = new Audio('https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta5recta/master/audio/Incorrecto.mp3');
+const felicidadesAudio = new Audio('https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta5recta/master/audio/Felicidades.mp3');
+const intentarAudio = new Audio('https://raw.githubusercontent.com/AxelCotonGutierrez/Contarhasta5recta/master/audio/Intentar.mp3');
+
+// Acceder al botón de silencio y al icono del megáfono en el DOM
+const soundControl = document.querySelector('#sound-control');
+const megaphoneIcon = document.querySelector('#megaphone-icon');
+
+// Función para reproducir audio si el sonido está activado
+function playAudio(audioElement) {
+  if (soundControl.checked) {
+    audioElement.play();
+  }
+}
+
+// Evento clic para el icono del megáfono para reproducir la pregunta en audio
+megaphoneIcon.addEventListener('click', () => playAudio(preguntaAudio));
+
 document.addEventListener('DOMContentLoaded', function() {
   const numbers = document.querySelectorAll('.number');
   const startButton = document.getElementById('start-button');
   const questionElement = document.getElementById('question');
   const resultElement = document.getElementById('result');
   const playAgainButton = document.getElementById('play-again-button');
+  const scoreElement = document.getElementById('score'); // Elemento para mostrar el puntaje
 
   let randomNumber;
   let previousRandomNumber;
@@ -19,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
       number.classList.remove('selected');
     });
     resultElement.innerHTML = '';
+    scoreElement.textContent = '';
     score = 0;
     questionsCount = 0;
     isGameRunning = false;
@@ -46,22 +69,32 @@ document.addEventListener('DOMContentLoaded', function() {
       resultElement.innerHTML = `
         <div class="message-container">
           <span class="msj correcto">¡Correcto!</span>
-        </div>
-      `;
+        </div>`;
+      playAudio(correctoAudio);
       score++;
     } else {
       this.classList.add('selected');
       resultElement.innerHTML = `
         <div class="message-container">
           <span class="msj incorrecto">Incorrecto</span>
-        </div>
-      `;
+        </div>`;
+      playAudio(incorrectoAudio);
     }
 
     questionsCount++;
 
     if (questionsCount === 5) {
       questionElement.textContent = `¡Juego completado! Preguntas acertadas: ${score} de ${questionsCount}.`;
+
+      if (score === 5) {
+        playAudio(felicidadesAudio);
+      } else {
+        playAudio(intentarAudio);
+      }
+
+      // Incrementar el contador en Firebase
+      incrementarContadorFirebase("Infantil/Matemáticas/Contar/5", "5recta");
+
       isGameRunning = false;
       playAgainButton.style.display = 'block';
     } else {
@@ -102,6 +135,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   startButton.addEventListener('click', handleStart);
   playAgainButton.addEventListener('click', handlePlayAgain);
+
+  // Mostrar el contador al cargar la página
+  mostrarContador("Infantil/Matemáticas/Contar/5", "5recta");
 
   // Mostrar el botón "Comenzar" al cargar la página
   resetGame();
