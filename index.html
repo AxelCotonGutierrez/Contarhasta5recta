@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JUEGO DE LA RECTA NUMÉRICA</title>
+  <title>JUEGO DE LA RECTA NUMÉRICA HASTA EL 5</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="nav.css">
   <link rel="icon" href="icon.png" type="image/png">
@@ -28,7 +28,10 @@
   <br>
   
   <div class="container2">
-    <span class="pregunta">¿Eres capaz de contar hasta cinco usando la recta numérica?</span>
+    <span class="pregunta">¿Puedes encontrar del 1 al 5 en la recta numérica 5 veces seguidas sin errores?</span>
+    <div id="audio-controls">
+      <img src="img/Megafono.png" id="megaphone-icon" alt="Megáfono">
+    </div>
     <button id="play-again-button" style="display: none;">Volver a jugar</button>
   </div>
   
@@ -57,10 +60,18 @@
     <p class="pregunta2" id="question"></p>
     <button id="start-button">Comenzar</button>
     <div id="result"></div>
+    <br>
     <span class="msj" id="score"></span>
-    <p id="contador">Han jugado 0 veces.</p> <!-- Añadido el contador aquí -->
   </div>
-  
+  <label for="sound-control">Sonido:</label>
+  <input type="checkbox" id="sound-control" checked>
+  <p class="textosuperior" style="text-align: center;"> 
+    <b><a href="https://youtu.be/wOAo04Zj8lw?si=klnOYxiW70LAATTX" target="_blank">¿Cómo jugar?</a></b>
+  </p>
+
+  <!-- Contador -->
+  <p id="contador">Han jugado 0 veces.</p>
+
   <script src="script.js"></script>
   <br>
   <div id="footer-placeholder"></div>
