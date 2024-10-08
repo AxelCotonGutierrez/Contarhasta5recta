@@ -113,8 +113,9 @@ document.addEventListener('DOMContentLoaded', function() {
       number.classList.remove('selected');
     });
     randomNumber = getRandomNumber();
-    questionElement.textContent = `¿En qué parte de la recta se encuentra el número ${randomNumber}?`;
+    questionElement.textContent = `¿${randomNumber}?`;
   }
+
 
   function handlePlayAgain() {
     resetGame();
