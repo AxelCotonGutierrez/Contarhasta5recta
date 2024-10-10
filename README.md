@@ -4,11 +4,17 @@
 
 Dentro del blog: https://axelcotongutierrez.github.io/learningmathematicas/
 
+Vídeo Explicativo del código: https://www.youtube.com/watch?v=FHDq5PUqSXg
+
 Juego para Infantil para aprender a contar hasta cinco usando la recta numérica.
 
 Puedes probar el juego en esta url:
 
 https://axelcotongutierrez.github.io/Contarhasta5recta/
+
+Para saber como jugar solo ver la sección correspondiente en nuestro Canal de Youtube:
+
+https://www.youtube.com/watch?v=UxAd86fyDTQ
 
 ¡Bienvenidos a la emocionante aventura de la Recta Numérica hasta 5!
 
